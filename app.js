@@ -6,7 +6,7 @@ const User = require('./models/users'); // Import the User model
 
 
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 8000;
 const path = require("path"); 
 
 //database connection
@@ -39,6 +39,11 @@ app.set('view engine', 'ejs');
 
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, 'assets')));
+
+
+// Include your provided routes for increment and decrement
+// app.use(require('./path-to-your-routes-file')); // Update this line with the correct path
+
 
 
 //routes prefix
