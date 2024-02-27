@@ -41,11 +41,13 @@
                     <div class="center-wrap">
                       <div class="section text-center">
                         <h4 class="mb-4 pb-3">Log In</h4>
+                        <form id="login-form" action="/login" method="POST">
                         <div class="form-group">
                           <input
                             type="email"
                             class="form-style"
                             placeholder="Email"
+                            id="login-email" 
                           />
                           <i class="input-icon uil uil-at"></i>
                         </div>
@@ -54,10 +56,15 @@
                             type="password"
                             class="form-style"
                             placeholder="Password"
+                            id="login-password"
                           />
                           <i class="input-icon uil uil-lock-alt"></i>
                         </div>
-                        <a href="" class="btn mt-4">Login</a>
+
+                        <button type="submit" class="btn mt-4">
+                            Login
+                          </button>
+                        </form>
                         <p class="mb-0 mt-4 text-center">
                           <a href="" class="link">Forgot your password?</a>
                         </p>
@@ -68,41 +75,51 @@
                     <div class="center-wrap">
                       <div class="section text-center">
                         <h4 class="mb-3 pb-3">Sign Up</h4>
-                        <div class="form-group">
-                          <input
-                            type="text"
-                            class="form-style"
-                            placeholder="Full Name"
-                          />
-                          <i class="input-icon uil uil-user"></i>
-                        </div>
-                        <div class="form-group mt-2">
-                          <input
-                            type="tel"
-                            class="form-style"
-                            placeholder="Phone Number"
-                          />
-                          <i class="input-icon uil uil-phone"></i>
-                        </div>
-                        <div class="form-group mt-2">
-                          <input
-                            type="email"
-                            class="form-style"
-                            placeholder="Email"
-                          />
-                          <i class="input-icon uil uil-at"></i>
-                        </div>
-                        <div class="form-group mt-2">
-                          <input
-                            type="password"
-                            class="form-style"
-                            placeholder="Password"
-                          />
-                          <i class="input-icon uil uil-lock-alt"></i>
-                        </div>
-                        <button onclick="register()" class="btn mt-4">
-                          Register
-                        </button>
+                        <form id="registration-form" action="/register" method="POST">
+                          <div class="form-group">
+                            <input
+                              type="text"
+                              class="form-style"
+                              placeholder="Full Name"
+                              id="full-name"
+                              name="name"
+                            />
+                            <i class="input-icon uil uil-user"></i>
+                          </div>
+                          <div class="form-group mt-2">
+                            <input
+                              type="tel"
+                              class="form-style"
+                              placeholder="Phone Number"
+                              id="phone-number"
+                              name="phone"
+                            />
+                            <i class="input-icon uil uil-phone"></i>
+                          </div>
+                          <div class="form-group mt-2">
+                            <input
+                              type="email"
+                              class="form-style"
+                              placeholder="Email"
+                              id="email"
+                              name="email"
+                            />
+                            <i class="input-icon uil uil-at"></i>
+                          </div>
+                          <div class="form-group mt-2">
+                            <input
+                              type="password"
+                              class="form-style"
+                              placeholder="Password"
+                              id="password"
+                              name="password"
+                            />
+                            <i class="input-icon uil uil-lock-alt"></i>
+                          </div>
+                          <button type="submit" class="btn mt-4">
+                            Register
+                          </button>
+                        </form>
                       </div>
                     </div>
                   </div>
@@ -114,24 +131,57 @@
       </div>
     </div>
     <script>
-      function register() {
-        fetch("/register", {
-          method: "POST",
+      //for register
+      document.getElementById('registration-form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const name = document.querySelector('#full-name').value;
+        const phone = document.querySelector('#phone-number').value;
+        const email = document.querySelector('#email').value;
+        const password = document.querySelector('#password').value;
+
+        fetch('/register', {
+          method: 'POST',
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
-          body: JSON.stringify({name: 'Umang raj' }),
+          body: JSON.stringify({ name, phone, email, password }),
         })
           .then((response) => response.json())
           .then((data) => {
-            console.log("Success:", data);
+            console.log('Success:', data);
             // Handle success response
           })
           .catch((error) => {
-            console.error("Error:", error);
+            console.error('Error:', error);
             // Handle error response
           });
-      }
+      });
+
+      //for login
+      document.getElementById('login-form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const email = document.querySelector('#login-email').value;
+        const password = document.querySelector('#login-password').value;
+
+        fetch('/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email, password }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log('Success:', data);
+            // Handle success response
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+            // Handle error response
+          });
+      });
     </script>
   </body>
 </html>
