@@ -152,37 +152,39 @@ sr.reveal(`.footer__container`, {
 
 
 
-let quantityPopupElement = document.querySelector('.quantity-popup');
-
-function increaseQuantityPopup() {
-    let currentQuantity = parseInt(quantityPopupElement.textContent);
-    quantityPopupElement.textContent = currentQuantity + 1;
+function increaseQuantityPopup(popupId) {
+  let quantityPopupElement = document.querySelector(`#${popupId} .quantity-popup`);
+  let currentQuantity = parseInt(quantityPopupElement.textContent);
+  quantityPopupElement.textContent = currentQuantity + 1;
 }
 
-function decreaseQuantityPopup() {
-    let currentQuantity = parseInt(quantityPopupElement.textContent);
-    if (currentQuantity > 1) {
-        quantityPopupElement.textContent = currentQuantity - 1;
-    }
+function decreaseQuantityPopup(popupId) {
+  let quantityPopupElement = document.querySelector(`#${popupId} .quantity-popup`);
+  let currentQuantity = parseInt(quantityPopupElement.textContent);
+  if (currentQuantity > 1) {
+      quantityPopupElement.textContent = currentQuantity - 1;
+  }
 }
 
 function showPopup(popupId) {
-    var popup = document.getElementById(popupId);
-    popup.style.display = "flex";
+  var popup = document.getElementById(popupId);
+  popup.style.display = "flex";
 }
 
-function addToCartFromPopup(productName, quantity) {
-    // Implement your addToCart functionality here
-    console.log("Adding to cart from popup: " + quantity + " " + productName);
-    // You can perform actions like updating the cart state, making API calls, etc.
+function addToCartFromPopup(productName, quantity, popupId) {
+  // Implement your addToCart functionality here
+  console.log("Adding to cart from popup: " + quantity + " " + productName);
+  console.log("Popup ID: " + popupId);
+  // You can perform actions like updating the cart state, making API calls, etc.
 }
 
 // Close the popup when clicking outside of it
 window.onclick = function(event) {
-    if (event.target.classList.contains("popup")) {
-        event.target.style.display = "none";
-    }
+  if (event.target.classList.contains("popup")) {
+      event.target.style.display = "none";
+  }
 };
+
 
 
 

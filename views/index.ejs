@@ -309,102 +309,128 @@
             </button>
           </article>
         </div>
-
         
+        
+
 <!-- Popup -->
-<  <div class="popup" id="popup1">
-  <!-- Popup Content -->
+ <div class="popup" id="popup1">
+
   <div class="popup-content">
     <img src="/img/favorite-bread-1.png" alt="image" class="popup__img" />
     <div class="popup__data">
-      <h2 class="popup__title">Whole Grain</h2>
-      <span class="popup__subtitle">Bread</span>
-      <h3 class="popup__price">$6.00</h3>
+      <h2 class="popup__title">Whole Grain</h2> 
+      <span class="popup__subtitle">Bread</span>  <br>
+      <h3 class="popup__price">$6.00</h3> <br>
       <button class="popup__button button" onclick="addToCartFromPopup('Whole Grain Bread', parseInt(document.querySelector('.quantity-popup').textContent))">
-        Add to Cart
-        <!-- Quantity buttons -->
-        <button class="quantity-button" onclick="decreaseQuantityPopup()">-</button>
-        <span class="quantity-popup">1</span>
-        <button class="quantity-button" onclick="increaseQuantityPopup()">+</button>
-      </button>
+        Add to Cart </button>
+        <div class="popup__quantity">
+          <button class="quantity-button" onclick="decreaseQuantityPopup('popup1')">-</button>
+          <span class="quantity-popup">1</span>
+          <button class="quantity-button" onclick="increaseQuantityPopup('popup1')">+</button>
+        </div>
     </div>
   </div>
 </div>
 
-        <div class="popup" id="popup2">
-          <!-- Popup Content -->
-          <div class="popup-content">
-            <img src="/img/favorite-bread-2.png" alt="image" class="popup__img" />
-            <div class="popup__data">
-              <h2 class="popup__title">Whole Grain</h2>
-              <span class="popup__subtitle">Bread</span>
-              <h3 class="popup__price">$6.00</h3>
-              <button class="popup__button button">
-                Add to Cart
-              </button>
-            </div>
-          </div>
-        </div>
+     <!-- Popup -->
+ <div class="popup" id="popup2">
 
-        <div class="popup" id="popup3">
-          <!-- Popup Content -->
-          <div class="popup-content">
-            <img src="/img/favorite-bread-3.png" alt="image" class="popup__img" />
-            <div class="popup__data">
-              <h2 class="popup__title">Whole Grain</h2>
-              <span class="popup__subtitle">Bread</span>
-              <h3 class="popup__price">$6.00</h3>
-              <button class="popup__button button">
-                Add to Cart
-              </button>
-            </div>
-          </div>
+  <div class="popup-content">
+    <img src="/img/favorite-bread-1.png" alt="image" class="popup__img" />
+    <div class="popup__data">
+      <h2 class="popup__title">Rye</h2> 
+      <span class="popup__subtitle">Bread</span>  <br>
+      <h3 class="popup__price">$8.00</h3> <br>
+      <button class="popup__button button" onclick="addToCartFromPopup('Whole Grain Bread', parseInt(document.querySelector('.quantity-popup').textContent))">
+        Add to Cart </button>
+        <div class="popup__quantity">
+          <button class="quantity-button" onclick="decreaseQuantityPopup('popup2')">-</button>
+          <span class="quantity-popup">1</span>
+          <button class="quantity-button" onclick="increaseQuantityPopup('popup2')">+</button>
         </div>
+    </div>
+  </div>
+</div>
 
-        <div class="popup" id="popup4">
-          <!-- Popup Content -->
-          <div class="popup-content">
-            <img src="/img/favorite-bread-4.png" alt="image" class="popup__img" />
-            <div class="popup__data">
-              <h2 class="popup__title">Whole Grain</h2>
-              <span class="popup__subtitle">Bread</span>
-              <h3 class="popup__price">$6.00</h3>
-              <button class="popup__button button">
-                Add to Cart
-              </button>
-            </div>
-          </div>
-        </div>
+       <!-- Popup -->
+ <div class="popup" id="popup3">
 
-        <div class="popup" id="popup5">
-          <!-- Popup Content -->
-          <div class="popup-content">
-            <img src="/img/favorite-bread-5.png" alt="image" class="popup__img" />
-            <div class="popup__data">
-              <h2 class="popup__title">Whole Grain</h2>
-              <span class="popup__subtitle">Bread</span>
-              <h3 class="popup__price">$6.00</h3>
-              <button class="popup__button button">
-                Add to Cart
-              </button>
-            </div>
-          </div>
+  <div class="popup-content">
+    <img src="/img/favorite-bread-1.png" alt="image" class="popup__img" />
+    <div class="popup__data">
+      <h2 class="popup__title">Wheat</h2> 
+      <span class="popup__subtitle">Bread</span>  <br>
+      <h3 class="popup__price">$3.00</h3> <br>
+      <button class="popup__button button" onclick="addToCartFromPopup('Whole Grain Bread', parseInt(document.querySelector('.quantity-popup').textContent))">
+        Add to Cart </button>
+        <div class="popup__quantity">
+          <button class="quantity-button" onclick="decreaseQuantityPopup('popup3')">-</button>
+          <span class="quantity-popup">1</span>
+          <button class="quantity-button" onclick="increaseQuantityPopup('popup3')">+</button>
         </div>
+    </div>
+  </div>
+</div>
 
-        <div class="popup" id="popup6">
-          <!-- Popup Content -->
-          <div class="popup-content">
-            <img src="/img/favorite-bread-6.png" alt="image" class="popup__img" />
-            <div class="popup__data">
-              <h2 class="popup__title">Whole Grain</h2>
-              <span class="popup__subtitle">Bread</span>
-              <h3 class="popup__price">$6.00</h3>
-              <button class="popup__button button">
-                Add to Cart
-              </button>
-            </div>
-          </div>
+<!-- Popup -->
+<div class="popup" id="popup4">
+
+  <div class="popup-content">
+    <img src="/img/favorite-bread-1.png" alt="image" class="popup__img" />
+    <div class="popup__data">
+      <h2 class="popup__title">Multigrain</h2> 
+      <span class="popup__subtitle">Bread</span>  <br>
+      <h3 class="popup__price">$5.00</h3> <br>
+      <button class="popup__button button" onclick="addToCartFromPopup('Whole Grain Bread', parseInt(document.querySelector('.quantity-popup').textContent))">
+        Add to Cart </button>
+        <div class="popup__quantity">
+          <button class="quantity-button" onclick="decreaseQuantityPopup('popup4')">-</button>
+          <span class="quantity-popup">1</span>
+          <button class="quantity-button" onclick="increaseQuantityPopup('popup4')">+</button>
         </div>
+    </div>
+  </div>
+</div>
+
+<!-- Popup -->
+<div class="popup" id="popup5">
+
+  <div class="popup-content">
+    <img src="/img/favorite-bread-1.png" alt="image" class="popup__img" />
+    <div class="popup__data">
+      <h2 class="popup__title">Sourdough</h2> 
+      <span class="popup__subtitle">Bread</span>  <br>
+      <h3 class="popup__price">$7.00</h3> <br>
+      <button class="popup__button button" onclick="addToCartFromPopup('Whole Grain Bread', parseInt(document.querySelector('.quantity-popup').textContent))">
+        Add to Cart </button>
+        <div class="popup__quantity">
+          <button class="quantity-button" onclick="decreaseQuantityPopup('popup5')">-</button>
+          <span class="quantity-popup">1</span>
+          <button class="quantity-button" onclick="increaseQuantityPopup('popup5')">+</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- Popup -->
+<div class="popup" id="popup6">
+
+  <div class="popup-content">
+    <img src="/img/favorite-bread-1.png" alt="image" class="popup__img" />
+    <div class="popup__data">
+      <h2 class="popup__title">French</h2> 
+      <span class="popup__subtitle">Bread</span>  <br>
+      <h3 class="popup__price">$3.00</h3> <br>
+      <button class="popup__button button" onclick="addToCartFromPopup('Whole Grain Bread', parseInt(document.querySelector('.quantity-popup').textContent))">
+        Add to Cart </button>
+        <div class="popup__quantity">
+          <button class="quantity-button" onclick="decreaseQuantityPopup('popup6')">-</button>
+          <span class="quantity-popup">1</span>
+          <button class="quantity-button" onclick="increaseQuantityPopup('popup6')">+</button>
+        </div>
+    </div>
+  </div>
+</div>
 
 
       </section>

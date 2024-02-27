@@ -491,6 +491,16 @@ about__img {
   cursor: pointer;
 }
 
+.quantity-button {
+  height: 25px;
+  width: 25px;
+  margin: 0 5px;
+  background-color: var(--first-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
 .favorite__img {
   width: 120px;
   position: absolute;
