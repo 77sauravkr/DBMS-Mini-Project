@@ -49,6 +49,7 @@ app.use(express.static(path.join(__dirname, 'assets')));
 //routes prefix
 app.use("", require("./routes/routes"))
 
+// app.use(express.static('public')); // Serve files from the 'public' directory
 
 
 // app.post("/register", async (req, res) => {
@@ -110,7 +111,7 @@ app.post('/register', async (req, res) => {
         // Create a new user
         const newUser = new User({ name, phone, email, password });
         await newUser.save();
-
+p
         res.status(200).json({ message: 'User registered successfully' });
     } catch (error) {
         console.error('Error:', error);

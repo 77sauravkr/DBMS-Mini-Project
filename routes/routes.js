@@ -1,21 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/users");
-const multer = require("multer"); //for imageupload
 
-//image upload
-// var storage = multer.diskStorage({
-//     destination: function (req, file, cb) {
-//         cb(null, "./uploads");
-//     },
-//     filename: function (req, file, cb) {
-//         cb(null, file.fieldname+"_"+Date.now()+"_"+file.originalname);
-//     }
-// })
-
-// var upload = multer({
-//     storage: storage
-// }).single('image');
 
 router.post("/register", async (req, res) => {
   const { name, email, phone, password } = req.body;
@@ -73,7 +59,7 @@ router.get("/login", (req, res) => {
 
 router.get("/cart", (req, res) => {
   // Assuming `yourProductsArray` is the array of products you want to pass to the view
-  res.render("cart.ejs", { products: yourProductsArray });
+  res.render("cart.ejs");
 });
 
 
