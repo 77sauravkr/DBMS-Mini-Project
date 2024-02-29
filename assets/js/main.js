@@ -203,6 +203,9 @@ window.onclick = function(event) {
 //   items: [],
 //   total: 0,
 // };
+let items=[];
+let total=0;
+let cart={};
 
 // Function to add items to the cart from the popup
 function addToCartFromPopup(productName, quantity, price, popupId) {
@@ -212,15 +215,15 @@ function addToCartFromPopup(productName, quantity, price, popupId) {
   const totalPrice = price * quantity;
 
   // Check if the item is already in the cart
-  const existingItem = cart.items.find(item => item.name === productName);
+  const existingItem = items.find(item => item.name === productName);
 
   if (existingItem) {
     // If the item is already in the cart, update its quantity and total price
-    existingItem.quantity += quantity;
-    existingItem.total += totalPrice;
+    existingItem.quantity = quantity;
+    existingItem.total = total+totalPrice;
   } else {
     // If the item is not in the cart, add it
-    cart.items.push({
+   items.push({
       name: productName,
       quantity: quantity,
       price: price,
@@ -228,12 +231,18 @@ function addToCartFromPopup(productName, quantity, price, popupId) {
     });
   }
 
+  
+
   // Update the total price of the cart
-  cart.total += totalPrice;
+  // cart.total += totalPrice;
+cart.item=items;
+cart.total=items.reduce((accumulator, currentObject) => accumulator + currentObject.total, 0);
+
+
 
   // Log the updated cart for testing (you can replace this with your API calls or state updates)
-  console.log("Updated Cart:", cart);
-
+  // console.log("Updated Cart:", cart);
+localStorage.setItem('cart', JSON.stringify(cart))
   // Update and reflect the cart details on the UI
   updateCartUI();
 }

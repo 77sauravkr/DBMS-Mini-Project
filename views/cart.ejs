@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="/css/cart.css" />
 </head>
 <body class="">
+   
     
     <div class="container">
-        <header>
+        <header >
+            <!-- <img src="/img/home-bg.jpg" alt="image" class="home__bg" /> Add this line for the background image -->
             <div class="title">PRODUCT LIST</div>
             <div class="icon-cart">
                 <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
@@ -18,14 +20,23 @@
                 <span>0</span>
             </div>
         </header> 
-         <div class="listProduct">
-
+        <div class="listProduct">
+            <!-- Your product list content goes here -->
         </div>
     </div>
     <div class="cartTab">
         <h1>Shopping Cart</h1>
+
+        <!-- item.map((item,index)=>{//print item}) -->
+
+        <% console.log(localStorage.getItem("item"))%>
+        <!-- console.log(localStorage.getItem("item") -->
+        <!-- const item=localStorage.getItem("item") -->
+
+
+
         <div class="listCart">
-            
+            <!-- Your shopping cart content goes here -->
         </div>
         <div class="btn">
             <button class="close">CLOSE</button>
@@ -34,7 +45,5 @@
     </div>
 
     <script src="/js/cart.js"></script>
-
-
 </body>
 </html>

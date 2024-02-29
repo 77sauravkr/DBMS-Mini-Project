@@ -68,6 +68,7 @@ const addCartToMemory = () => {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 const addCartToHTML = () => {
+  console.log(JSON.parse(localStorage.getItem('cart')));
     listCartHTML.innerHTML = '';
     let totalQuantity = 0;
     if(cart.length > 0){

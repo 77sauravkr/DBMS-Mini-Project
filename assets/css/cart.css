@@ -1,7 +1,16 @@
+/* body {
+  background-image: url('/animated-bakery-website.netlify.app/assets/img/home-bg.jpg'); 
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center;
+ 
+} */
+
 
 body{
     margin: 0;
     font-family: Poppins;
+
   }
   .container{
     width: 900px;
